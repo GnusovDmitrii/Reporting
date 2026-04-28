@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+    id 'io.freefair.lombok' version '8.10'
+
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+allure {
+    version = '2.20.1'
+    useJUnit5 {
+        version = '2.20.1'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.3'
+    testImplementation 'com.codeborne:selenide:6.19.0'
+    testImplementation 'io.rest-assured:rest-assured:5.3.1'
+    testImplementation 'com.google.code.gson:gson:2.8.6'
+    testRuntimeOnly 'org.slf4j:slf4j-simple:1.7.32'
+    testImplementation 'io.qameta.allure:allure-selenide:2.20.1'
+}
+
+test {
+    useJUnitPlatform()
+
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    systemProperty 'chromeoptions.prefs', System.getProperty('chromeoptions.prefs', "profile.password_manager_leak_detection=false")
+}
