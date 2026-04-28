@@ -1,3 +1,6 @@
+<img width="2143" height="1146" alt="Allure" src="https://github.com/user-attachments/assets/e533229f-9cf6-4d73-aca4-aa287baaa69f" />
+
+
 # Домашнее задание к занятию «4.1. Репортинг»
 
 В качестве результата пришлите ссылку на ваш GitHub-проект в личном кабинете студента на
